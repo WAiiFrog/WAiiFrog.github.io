@@ -7,13 +7,15 @@
   <title>
     {{ page.title }}
     {% if page.category == 'blog' and page.url != '/blog/index.html' %}
-    - Yong Yuan
+    - Hawaii
     {% endif %}
   </title>
   <link rel="stylesheet" href="../css/site.css">
   <link href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
   <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-  {% if page.description %}<meta name="description" content="{{page.description}}" />{% endif %}
+  {% if page.description %}
+  <meta name="description" content="{{page.description}}" />
+  {% endif %}
   <link href="/blog/feed.xml" type="application/rss+xml" rel="alternate" title="Latest 10 blog posts (atom)" />
 
   {% if page.url == '/index.html' %}
@@ -40,12 +42,12 @@
         <a class="{% if page.category == 'project-zh' %} selected {% endif %}" href="/cn/project">项目</a>
         <!--<a class="{% if page.category == 'resume' %} selected {% endif %}" href="/resume/">Resume</a>-->
         <!--<a href="/resume/">简历</a>-->
-        <a href="/YongYuan_resume.pdf">简历</a>
+        <!--<a href="/YongYuan_resume.pdf">Resume</a>-->
         <!--<a class="{% if page.category == 'publication' %} selected {% endif %}" href="/publication/">出版</a>-->
         <a class="{% if page.category == 'blog' %} selected {% endif %}" href="/blog/">博客</a>
         <a href="/books/">书单</a>
 		    <a href="/timeline/">时间线</a>
-        <a href="https://github.com/willard-yuan">Github</a>
+        <a href="https://github.com/WAiiFrog">Github</a>
       </nav>
       {% elsif page.url == '/cn/project' %}
       <nav>
@@ -53,12 +55,12 @@
         <a class="{% if page.category == 'project-zh' %} selected {% endif %}" href="/cn/project">项目</a>
         <!--<a class="{% if page.category == 'resume' %} selected {% endif %}" href="/resume/">Resume</a>-->
         <!--<a href="/yuanyong_resume_cn.pdf">简历</a>-->
-	      <a href="/YongYuan_resume.pdf">简历</a>
+	      <!--<a href="/YongYuan_resume.pdf">简历</a>-->
         <!--<a class="{% if page.category == 'publication' %} selected {% endif %}" href="/publication/">出版</a>-->
         <a class="{% if page.category == 'blog' %} selected {% endif %}" href="/blog/">博客</a>
 	      <a href="/books/">书单</a>
 		    <a href="/timeline/">时间线</a>
-        <a href="https://github.com/willard-yuan">GitHub</a>
+        <a href="https://github.com/WAiiFrog">GitHub</a>
       </nav>
       {% else %}
       <nav>
@@ -66,12 +68,12 @@
         <a class="{% if page.category == 'project' %} selected {% endif %}" href="/project/">Project</a>
         <!--<a class="{% if page.category == 'resume' %} selected {% endif %}" href="/resume/">Resume</a>-->
 	      <!--<a href="/yuanyong_resume_cn.pdf">Resume</a>-->
-	      <a href="/YongYuan_resume.pdf">Resume</a>
+	      <!--<a href="/YongYuan_resume.pdf">Resume</a>-->
         <!--<a class="{% if page.category == 'publication' %} selected {% endif %}" href="/publication/">Publication</a>-->
         <a class="{% if page.category == 'blog' %} selected {% endif %}" href="/blog/">Blog</a>
 	      <a href="/books/">Book</a>
 		    <a href="/timeline/">Times</a>
-        <a href="https://github.com/willard-yuan">GitHub</a>
+        <a href="https://github.com/WAiiFrog">GitHub</a>
       </nav>
 	  {% endif %}
 
@@ -88,7 +90,7 @@
             </em>
           </small>
         </div>-->
-        <a href="http://yongyuan.name/"><img class="avatar" src="http://yongyuan.name/imgs/yongyuan_55.png" alt="My profile picture" /></a>
+        <a href="https://waiifrog.github.io/"><img class="avatar" src="./imgs/waiifrog.png" alt="My profile picture" /></a>
       </div>
       <div class="clear"></div>
     </header>
@@ -108,7 +110,7 @@
     </p-->
     <p>
       Made with <a href="http://jekyllrb.com/">Jekyll</a>,
-      hosted on <a href="https://github.com/willard-yuan/willard-yuan.github.io">Github Pages</a>. Inspired by <a href="http://sebastien.saunier.me/">saunier</a>, designed by <a href="http://yongyuan.name">Willard</a>.
+      hosted on <a href="https://github.com/WAiiFrog/WAiiFrog.github.io">Github Pages</a>. Inspired by <a href="http://sebastien.saunier.me/">saunier</a>, designed by <a href="http://yongyuan.name">Willard</a>.
     </p>
     <p>
       <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Attribution-NonCommercial-ShareAlike 4.0 International</a> 2013-2018
