@@ -127,7 +127,7 @@ std::set<int>::iterator it = s.begin();
 
 ### 参考文献：
 
-1)Peter Van Der Linden. *Expert C Programming.*
-2)Andrew Koenig, Barbara Moo. *Ruminations on C++.*
-3)Andrew Koenig.* C trap and Pitfalls.*
-4)Stanley B. Lippman, Josee Lajoie, Barbara E. Moo .* C++ Primer*
+-Peter Van Der Linden. *Expert C Programming.*
+-Andrew Koenig, Barbara Moo. *Ruminations on C++.*
+-Andrew Koenig.*C trap and Pitfalls.*
+-Stanley B. Lippman, Josee Lajoie, Barbara E. Moo .*C++ Primer*
