@@ -14,7 +14,8 @@ dfs过程如下
 
 
 我们任然采用邻接表来存图，我们把询问也当作图，连边方便访问。
->struct Edges{
+>
+struct Edges{
 	int s,t,nxt;
 	Edges(){
 		s = t = nxt = 0;
@@ -39,7 +40,8 @@ inline void add_q(int u,int v){
 	hq[v] =cont;
 }
 这里我用了pair<int,int>来保存每一对询问，然后映射这一对结点的lca上。
->int Tarjan(int u){
+>
+int Tarjan(int u){
 	vis[u] = 1;
 	fa[u] = u;
 	int v;
