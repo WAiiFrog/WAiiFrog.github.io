@@ -15,51 +15,52 @@ dfs过程如下
 
 我们任然采用邻接表来存图，我们把询问也当作图，连边方便访问。
 >
-struct Edges{
-	int s,t,nxt;
-	Edges(){
-		s = t = nxt = 0;
+	struct Edges{
+		int s,t,nxt;
+		Edges(){
+			s = t = nxt = 0;
+		}
+		Edges(int _s,int _t,int _nxt):s(_s),t(_t),nxt(_nxt){}
+	}e[M*2],q[Q*2];
+	int tot = 1,head[N];
+	int get_f(int x){
+		if(x == fa[x])return x;
+		return fa[x] = get_f(fa[x]);
 	}
-	Edges(int _s,int _t,int _nxt):s(_s),t(_t),nxt(_nxt){}
-}e[M*2],q[Q*2];
-int tot = 1,head[N];
-int get_f(int x){
-	if(x == fa[x])return x;
-	return fa[x] = get_f(fa[x]);
-}
-inline void add(int u,int v){
-	e[++tot] = Edges(u,v,head[u]);
-	head[u] = tot;
-	e[++tot] = Edges(v,u,head[v]);
-	head[v] = tot;
-}
-inline void add_q(int u,int v){
-	q[++cont] = Edges(u,v,hq[u]);
-	hq[u] = cont;
-	q[++cont] = Edges(v,u,hq[v]);
-	hq[v] =cont;
-}
+	inline void add(int u,int v){
+		e[++tot] = Edges(u,v,head[u]);
+		head[u] = tot;
+		e[++tot] = Edges(v,u,head[v]);
+		head[v] = tot;
+	}
+	inline void add_q(int u,int v){
+		q[++cont] = Edges(u,v,hq[u]);
+		hq[u] = cont;
+		q[++cont] = Edges(v,u,hq[v]);
+		hq[v] =cont;
+	}
+
 这里我用了pair<int,int>来保存每一对询问，然后映射这一对结点的lca上。
 >
-int Tarjan(int u){
-	vis[u] = 1;
-	fa[u] = u;
-	int v;
-	for(register int i=hq[u];i;i = q[i].nxt){
-		v = q[i].t;
-		if(vis[v]){
-			lca[make_pair(v,u)] = lca[make_pair(u,v)] = get_f(v);	 
+	int Tarjan(int u){
+		vis[u] = 1;
+		fa[u] = u;
+		int v;
+		for(register int i=hq[u];i;i = q[i].nxt){
+			v = q[i].t;
+			if(vis[v]){
+				lca[make_pair(v,u)] = lca[make_pair(u,v)] = get_f(v);	 
+			}
 		}
+		for(int i = head[u];i;i = e[i].nxt){
+			v = e[i].t;
+			if(vis[v] == 0){
+				dep[v] = dep[u]+1;
+				Tarjan(v);
+				fa[v] = u;
+			}
+		} 
 	}
-	for(int i = head[u];i;i = e[i].nxt){
-		v = e[i].t;
-		if(vis[v] == 0){
-			dep[v] = dep[u]+1;
-			Tarjan(v);
-			fa[v] = u;
-		}
-	} 
-}
 
 这就是求LCA的Tarjan算法
 
